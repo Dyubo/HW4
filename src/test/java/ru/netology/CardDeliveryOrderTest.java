@@ -1,5 +1,7 @@
 package ru.netology;
 
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
@@ -16,6 +18,11 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class CardDeliveryOrderTest {
+
+    @BeforeAll
+    static void setUp() {
+        Configuration.headless = true;
+    }
 
     @Test
     void shouldSucсessOrder() {
